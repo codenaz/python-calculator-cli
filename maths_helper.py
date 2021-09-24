@@ -17,7 +17,7 @@ def multiply(a, b):
 operationsDict = {
     '+': add,
     '-': subtract,
-    'divide': divide,
-    'multiply': multiply
+    '/': divide,
+    'x': multiply
 }
 

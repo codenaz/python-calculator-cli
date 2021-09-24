@@ -14,10 +14,10 @@ class Calculator:
     @operand_x.setter
     def operand_x(self, value):
         try:
-            if value is None or float(value):
-                self.__operand_x = float(value) if value else value
+            if value is None:
+                self.__operand_x = None
             else:
-                print('Please enter a valid number')
+                self.__operand_x = float(value)
         except ValueError:
             print('Please enter a valid number')
 
@@ -28,10 +28,10 @@ class Calculator:
     @operand_y.setter
     def operand_y(self, value):
         try:
-            if value is None or float(value):
-                self.__operand_y = float(value) if value else value
+            if value is None:
+                self.__operand_y = None
             else:
-                print('Please enter a valid number')
+                self.__operand_y = float(value)
         except ValueError:
             print('Please enter a valid number')
 
@@ -42,8 +42,10 @@ class Calculator:
     @operator.setter
     def operator(self, value):
         allowed_operations = ['+', '-', '/', 'x']
-        if value is None or value.strip() in allowed_operations:
-            self.__operator = value.strip() if value else value
+        if value is None:
+            self.__operator = None
+        elif value.strip() in allowed_operations:
+            self.__operator = value.strip()
         else:
             print('Please enter a valid operator')
 
